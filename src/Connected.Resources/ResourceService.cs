@@ -21,6 +21,11 @@ internal sealed class ResourceService(IServiceProvider services) : Service(servi
 		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
 	}
 
+	public async Task<ImmutableList<IResource>> Lookup(IPrimaryKeyListDto<int> dto)
+	{
+		return await Invoke(GetOperation<Lookup>(), dto);
+	}
+
 	public async Task<IResource?> Select(IPrimaryKeyDto<int> dto)
 	{
 		return await Invoke(GetOperation<Select>(), dto);

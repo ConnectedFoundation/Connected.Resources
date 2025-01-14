@@ -1,6 +1,8 @@
-﻿namespace Connected.Resources.NamedResources;
+﻿using Connected.Entities;
 
-public interface INamedResource : IResource
+namespace Connected.Resources.NamedResources;
+
+public interface INamedResource : IEntity<int>
 {
 	string Name { get; init; }
 }

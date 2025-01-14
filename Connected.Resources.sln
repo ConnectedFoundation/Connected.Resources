@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.JobPositions", "src\Connected.Resources.JobPositions\Connected.Resources.JobPositions.csproj", "{E8E94FF4-DF84-4D9B-94C2-155443D3F3C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.NamedResources", "src\Connected.Resources.NamedResources\Connected.Resources.NamedResources.csproj", "{F8677F2E-676C-4FAE-BA35-38C76CFE3CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Extensions", "src\Connected.Resources.Extensions\Connected.Resources.Extensions.csproj", "{9386E8DA-CC4D-433B-8627-04A4274251A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E8E94FF4-DF84-4D9B-94C2-155443D3F3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E94FF4-DF84-4D9B-94C2-155443D3F3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E94FF4-DF84-4D9B-94C2-155443D3F3C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8677F2E-676C-4FAE-BA35-38C76CFE3CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8677F2E-676C-4FAE-BA35-38C76CFE3CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8677F2E-676C-4FAE-BA35-38C76CFE3CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8677F2E-676C-4FAE-BA35-38C76CFE3CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

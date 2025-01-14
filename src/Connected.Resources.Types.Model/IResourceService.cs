@@ -22,4 +22,7 @@ public interface IResourceService
 
 	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
 	Task<ImmutableList<IResource>> Query(IQueryDto? dto);
+
+	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
+	Task<ImmutableList<IResource>> Lookup(IPrimaryKeyListDto<int> dto);
 }

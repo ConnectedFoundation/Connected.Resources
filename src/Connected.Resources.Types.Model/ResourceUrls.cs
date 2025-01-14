@@ -5,4 +5,5 @@ public static class ResourceUrls
 
 	public const string Resources = $"{Namespace}/resources";
 	public const string JobPositions = $"{Namespace}/job-positions";
+	public const string NamedResources = $"{Namespace}/named-resources";
 }
