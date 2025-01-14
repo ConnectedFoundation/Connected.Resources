@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.NamedRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Extensions", "src\Connected.Resources.Extensions\Connected.Resources.Extensions.csproj", "{9386E8DA-CC4D-433B-8627-04A4274251A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.TimeLogs", "src\Connected.Resources.TimeLogs\Connected.Resources.TimeLogs.csproj", "{7898F696-4EC1-42C7-9656-AA78134E2AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9386E8DA-CC4D-433B-8627-04A4274251A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7898F696-4EC1-42C7-9656-AA78134E2AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7898F696-4EC1-42C7-9656-AA78134E2AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7898F696-4EC1-42C7-9656-AA78134E2AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7898F696-4EC1-42C7-9656-AA78134E2AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
