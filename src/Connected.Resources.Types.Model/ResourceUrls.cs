@@ -7,4 +7,6 @@ public static class ResourceUrls
 	public const string JobPositions = $"{Namespace}/job-positions";
 	public const string NamedResources = $"{Namespace}/named-resources";
 	public const string TimeLogs = $"{Namespace}/time-logs";
+	public const string TimeSheets = $"{Namespace}/time-sheets";
+	public const string TimeSheetItems = $"{Namespace}/time-sheets/items";
 }

@@ -1,17 +1,17 @@
 ﻿using Connected.Entities;
 
-namespace Connected.Resources.TimeSheets;
+namespace Connected.Resources.TimeSheets.Items;
 
-public enum TimeSheetPeriodType
+public enum TimeSheetItemType
 {
 	Unavailable = 0,
 	Available = 1
 }
 
-public interface ITimeSheetPeriodItem : IEntity<int>
+public interface ITimeSheetItem : IEntity<int>
 {
 	int TimeSheet { get; init; }
 	DateTimeOffset Start { get; init; }
 	DateTimeOffset? End { get; init; }
-	TimeSheetPeriodType Type { get; init; }
+	TimeSheetItemType Type { get; init; }
 }
