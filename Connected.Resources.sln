@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.TimeLog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.TimeSheets", "src\Connected.Resources.TimeSheets\Connected.Resources.TimeSheets.csproj", "{1D7723EF-2FB2-48FD-8E5F-393AD6DB267A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.WorkItems", "src\Connected.Resources.WorkItems\Connected.Resources.WorkItems.csproj", "{89828CE7-59FC-4E08-9124-1F374F7C7E00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{1D7723EF-2FB2-48FD-8E5F-393AD6DB267A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D7723EF-2FB2-48FD-8E5F-393AD6DB267A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D7723EF-2FB2-48FD-8E5F-393AD6DB267A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89828CE7-59FC-4E08-9124-1F374F7C7E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89828CE7-59FC-4E08-9124-1F374F7C7E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89828CE7-59FC-4E08-9124-1F374F7C7E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89828CE7-59FC-4E08-9124-1F374F7C7E00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

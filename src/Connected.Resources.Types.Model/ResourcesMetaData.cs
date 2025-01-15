@@ -3,6 +3,7 @@ using Connected.Resources.JobPositions;
 using Connected.Resources.TimeLogs;
 using Connected.Resources.TimeSheets;
 using Connected.Resources.TimeSheets.Items;
+using Connected.Resources.WorkItems;
 
 namespace Connected.Resources;
 public static class ResourcesMetaData
@@ -12,4 +13,5 @@ public static class ResourcesMetaData
 	public const string TimeLogKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(ITimeLog)}";
 	public const string TimeSheetKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(ITimeSheet)}";
 	public const string TimeSheetItemKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(ITimeSheetItem)}";
+	public const string WorkItemKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IWorkItem)}";
 }
