@@ -5,7 +5,7 @@ using Connected.Services;
 using Connected.Storage;
 
 namespace Connected.Resources.WorkItems.Ops;
-internal sealed class Insert(IStorageProvider storage, IWorkItemService workItems, IEventService events, IWorkItemCache cache)
+internal sealed class Insert(IStorageProvider storage, IWorkItemService workItems, IEventService events)
 	: ServiceFunction<IInsertWorkItemDto, long>
 {
 	protected override async Task<long> OnInvoke()

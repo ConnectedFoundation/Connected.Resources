@@ -21,5 +21,11 @@ public interface IWorkItemService
 	Task<IWorkItem?> Select(IPrimaryKeyDto<long> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
-	Task<ImmutableList<IWorkItem>> Query(IQueryWorkItemsDto dto);
+	Task<IImmutableList<IWorkItem>> Query(IQueryWorkItemsDto dto);
+
+	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
+	Task<IImmutableList<IWorkItem>> Query(IHeadDto<long> dto);
+
+	[ServiceOperation(ServiceOperationVerbs.Patch)]
+	Task Patch(IPatchDto<long> dto);
 }

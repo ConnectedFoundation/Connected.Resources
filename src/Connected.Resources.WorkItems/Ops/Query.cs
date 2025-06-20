@@ -6,9 +6,9 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.WorkItems.Ops;
 internal sealed class Query(IStorageProvider storage)
-	: ServiceFunction<IQueryWorkItemsDto, ImmutableList<IWorkItem>>
+	: ServiceFunction<IQueryWorkItemsDto, IImmutableList<IWorkItem>>
 {
-	protected override async Task<ImmutableList<IWorkItem>> OnInvoke()
+	protected override async Task<IImmutableList<IWorkItem>> OnInvoke()
 	{
 		return await storage.Open<WorkItem>().AsEntities<IWorkItem>(f => f.TimeSheet == Dto.TimeSheet
 			&& (Dto.Entity is null || string.Equals(f.Entity, Dto.Entity, StringComparison.OrdinalIgnoreCase))
