@@ -5,7 +5,7 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources;
 
-[Service, ServiceUrl(ResourceUrls.Resources)]
+[Service, ServiceUrl(ResourcesTypesUrls.Resources)]
 public interface IResourceService
 {
 	[ServiceOperation(ServiceOperationVerbs.Put)]

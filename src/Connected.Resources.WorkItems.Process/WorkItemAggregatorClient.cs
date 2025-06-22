@@ -15,7 +15,8 @@ internal class WorkItemAggregatorClient(IWorkItemService workItems) : QueueClien
 		var children = await workItems.Query(Dto.CreateHead(entity.Id));
 		var props = new Dictionary<string, object?>
 		{
-			{ nameof(IWorkItem.Estimation), children.Sum(f=>f.Estimation) }
+			{ nameof(IWorkItem.Estimation), children.Sum(f => f.Estimation) },
+			{ nameof(IWorkItem.ItemCount), children.Count }
 		};
 		var dto = Dto.CreatePatch(entity.Id, props);
 

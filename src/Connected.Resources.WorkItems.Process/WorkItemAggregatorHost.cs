@@ -4,7 +4,7 @@ namespace Connected.Resources.WorkItems.Process;
 
 internal sealed class WorkItemAggregatorHost : QueueHost
 {
-	public WorkItemAggregatorHost() : base(ResourcesMetaData.WorkItemKey, 2)
+	public WorkItemAggregatorHost() : base(ResourcesDocumentsMetaData.WorkItemKey, 2)
 	{
 	}
 }

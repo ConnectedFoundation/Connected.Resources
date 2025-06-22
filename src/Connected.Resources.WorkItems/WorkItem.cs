@@ -30,4 +30,7 @@ internal sealed record WorkItem : EntityContainer<long>, IWorkItem
 
 	[Ordinal(7)]
 	public int? JobPosition { get; init; }
+
+	[Ordinal(8)]
+	public int ItemCount { get; init; }
 }

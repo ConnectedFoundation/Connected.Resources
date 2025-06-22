@@ -4,7 +4,7 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.NamedResources;
 
-[Service, ServiceUrl(ResourceUrls.NamedResources)]
+[Service, ServiceUrl(ResourcesTypesUrls.NamedResources)]
 public interface INamedResourceService
 {
 	Task<ImmutableList<INamedResource>> Lookup(IPrimaryKeyListDto<int> dto);

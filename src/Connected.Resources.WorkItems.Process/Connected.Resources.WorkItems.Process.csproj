@@ -14,6 +14,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\Connected.Core\src\Connected.Core.Collections.Extensions\Connected.Core.Collections.Extensions.csproj" />
 		<ProjectReference Include="..\Connected.Resources.Types.Model\Connected.Resources.Types.Model.csproj" />
+		<ProjectReference Include="..\Connected.Resources.Documents.Model\Connected.Resources.Documents.Model.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -14,6 +14,6 @@ internal sealed class DeleteWorkItemListener(IQueueService queue) : EventListene
 		var entity = Sender.GetState<IWorkItem>() ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
 		if (entity.Parent is not null)
-			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(entity.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesMetaData.WorkItemKey));
+			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(entity.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesDocumentsMetaData.WorkItemKey));
 	}
 }

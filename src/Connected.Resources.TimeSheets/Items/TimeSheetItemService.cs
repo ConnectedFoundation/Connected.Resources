@@ -22,6 +22,11 @@ internal sealed class TimeSheetItemService(IServiceProvider services)
 		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
 	}
 
+	public async Task<IImmutableList<ITimeSheetItem>> Query(IQueryTimeSheetItemsDto dto)
+	{
+		return await Invoke(GetOperation<QueryByDate>(), dto);
+	}
+
 	public async Task<ITimeSheetItem?> Select(IPrimaryKeyDto<int> dto)
 	{
 		return await Invoke(GetOperation<Select>(), dto);

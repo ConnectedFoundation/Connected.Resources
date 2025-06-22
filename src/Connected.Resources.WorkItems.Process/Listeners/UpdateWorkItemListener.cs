@@ -18,11 +18,11 @@ internal sealed class UpdateWorkItemListener(IQueueService queue, IWorkItemServi
 		 * Parent has changed. We need to recalculate the old parent as well.
 		 */
 		if (origin.Parent != current.Parent && origin.Parent is not null)
-			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(origin.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesMetaData.WorkItemKey));
+			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(origin.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesDocumentsMetaData.WorkItemKey));
 		/*
 		 * Recalculate current parent
 		 */
 		if (current.Parent is not null)
-			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(current.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesMetaData.WorkItemKey));
+			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(current.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesDocumentsMetaData.WorkItemKey));
 	}
 }

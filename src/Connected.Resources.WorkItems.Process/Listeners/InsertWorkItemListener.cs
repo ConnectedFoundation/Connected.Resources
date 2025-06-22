@@ -17,6 +17,6 @@ internal sealed class InsertWorkItemListener(IQueueService queue) : EventListene
 		if (entity.Parent is null)
 			return;
 
-		await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(entity.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesMetaData.WorkItemKey));
+		await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(entity.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesDocumentsMetaData.WorkItemKey));
 	}
 }

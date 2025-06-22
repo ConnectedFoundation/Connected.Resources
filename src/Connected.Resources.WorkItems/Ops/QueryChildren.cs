@@ -5,7 +5,8 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.WorkItems.Ops;
 
-internal sealed class QueryChildren(IStorageProvider storage) : ServiceFunction<IHeadDto<long>, IImmutableList<IWorkItem>>
+internal sealed class QueryChildren(IStorageProvider storage)
+	: ServiceFunction<IHeadDto<long>, IImmutableList<IWorkItem>>
 {
 	protected override async Task<IImmutableList<IWorkItem>> OnInvoke()
 	{

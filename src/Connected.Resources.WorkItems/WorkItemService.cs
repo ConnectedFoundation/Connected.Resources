@@ -32,6 +32,11 @@ internal sealed class WorkItemService(IServiceProvider services)
 		return await Invoke(GetOperation<QueryChildren>(), dto);
 	}
 
+	public async Task<IImmutableList<IWorkItem>> Query(IQueryWorkItemsInDateDto dto)
+	{
+		return await Invoke(GetOperation<QueryIndate>(), dto);
+	}
+
 	public async Task<IWorkItem?> Select(IPrimaryKeyDto<long> dto)
 	{
 		return await Invoke(GetOperation<Select>(), dto);

@@ -5,7 +5,7 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.JobPositions;
 
-[Service, ServiceUrl(ResourceUrls.JobPositions)]
+[Service, ServiceUrl(ResourcesTypesUrls.JobPositions)]
 public interface IJobPositionService
 {
 	Task<int> Insert(IInsertJobPositionDto dto);
