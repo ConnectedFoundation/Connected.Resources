@@ -12,7 +12,7 @@ internal sealed class Update(IStorageProvider storage, IWorkItemService workItem
 	{
 		var entity = SetState(await workItems.Select(Dto.CreatePrimaryKey(Dto.Id))) as WorkItem ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<WorkItem>().Update(entity.Merge(Dto, State.Default), Dto, async () =>
+		await storage.Open<WorkItem>().Update(entity.Merge(Dto, State.Update), Dto, async () =>
 		{
 			await cache.Remove(Dto.Id);
 

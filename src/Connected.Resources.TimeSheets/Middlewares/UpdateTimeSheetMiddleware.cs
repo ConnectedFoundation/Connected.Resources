@@ -10,6 +10,6 @@ internal sealed class UpdateTimeSheetMiddleware(ITimeSheetService timeSheets)
 {
 	protected override async Task OnInvoke()
 	{
-		await TimeSheetsUtils.EnsureSingleDefault(timeSheets, Dto.Id);
+		await TimeSheetsUtils.EnsureSingleDefault(timeSheets, Operation.Dto.Id);
 	}
 }

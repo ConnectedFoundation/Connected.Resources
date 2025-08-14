@@ -11,7 +11,7 @@ internal sealed class Delete(IStorageProvider storage, ITimeLogCache cache, IEve
 	{
 		_ = SetState(await timeLogs.Select(Dto)) as TimeLog ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<TimeLog>().Update(Dto.AsEntity<TimeLog>(State.Deleted));
+		await storage.Open<TimeLog>().Update(Dto.AsEntity<TimeLog>(State.Delete));
 		await cache.Remove(Dto.Id);
 		await events.Deleted(this, timeLogs, Dto.Id);
 	}

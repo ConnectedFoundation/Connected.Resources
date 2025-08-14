@@ -18,7 +18,7 @@ public interface ITimeLogService
 	Task Delete(IPrimaryKeyDto<long> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Post | ServiceOperationVerbs.Get)]
-	Task<ImmutableList<ITimeLog>> Query(IQueryTimeLogsDto dto);
+	Task<IImmutableList<ITimeLog>> Query(IQueryTimeLogsDto dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Post | ServiceOperationVerbs.Get)]
 	Task<ITimeLog?> Select(IPrimaryKeyDto<long> dto);

@@ -10,7 +10,7 @@ internal sealed class Insert(IStorageProvider storage, IEventService events, ITi
 {
 	protected override async Task<int> OnInvoke()
 	{
-		var entity = await storage.Open<TimeSheet>().Update(Dto.AsEntity<TimeSheet>(State.New)) ?? throw new NullReferenceException(Strings.ErrEntityExpected);
+		var entity = await storage.Open<TimeSheet>().Update(Dto.AsEntity<TimeSheet>(State.Add)) ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
 		await cache.Refresh(entity.Id);
 		await events.Inserted(this, timeSheets, entity.Id);

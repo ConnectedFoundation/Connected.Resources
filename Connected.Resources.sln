@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Processes", "Processes", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Effort", "src\Connected.Resources.Effort\Connected.Resources.Effort.csproj", "{0A3A73D8-B8CA-4A8D-983E-56C225AE5F82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Sdk", "..\Connected.Core\src\Connected.Sdk\Connected.Sdk.csproj", "{677BCFEC-B55D-E52D-8DB0-0969AB117483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{0A3A73D8-B8CA-4A8D-983E-56C225AE5F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A3A73D8-B8CA-4A8D-983E-56C225AE5F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A3A73D8-B8CA-4A8D-983E-56C225AE5F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{677BCFEC-B55D-E52D-8DB0-0969AB117483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{677BCFEC-B55D-E52D-8DB0-0969AB117483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{677BCFEC-B55D-E52D-8DB0-0969AB117483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{677BCFEC-B55D-E52D-8DB0-0969AB117483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +128,7 @@ Global
 		{134C3811-E59D-4363-83FC-DF3003CAD2DC} = {6BDBCE3E-6A73-47D8-BA2D-5AE8EFAE1648}
 		{4753DA03-9A13-4F74-BC30-C1787CE4E7A5} = {E27D814A-4D89-4A56-8D02-F122BCDED2C0}
 		{A23D9E9F-4FAD-4704-98E2-B5D493299D8C} = {E27D814A-4D89-4A56-8D02-F122BCDED2C0}
+		{677BCFEC-B55D-E52D-8DB0-0969AB117483} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B57DD60-9CBD-4DA7-BBA4-1562AEF476E3}

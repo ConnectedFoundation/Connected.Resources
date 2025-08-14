@@ -11,7 +11,7 @@ internal sealed class Delete(IStorageProvider storage, IJobPositionService jobPo
 	{
 		_ = SetState(await jobPositions.Select(Dto)) as JobPosition ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<JobPosition>().Update(Dto.AsEntity<JobPosition>(State.Deleted));
+		await storage.Open<JobPosition>().Update(Dto.AsEntity<JobPosition>(State.Delete));
 		await cache.Remove(Dto.Id);
 		await events.Deleted(this, jobPositions, Dto.Id);
 	}

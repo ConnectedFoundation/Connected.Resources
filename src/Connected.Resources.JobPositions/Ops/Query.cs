@@ -4,9 +4,9 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.JobPositions.Ops;
 internal sealed class Query(IJobPositionCache cache)
-	: ServiceFunction<IQueryDto, ImmutableList<IJobPosition>>
+	: ServiceFunction<IQueryDto, IImmutableList<IJobPosition>>
 {
-	protected override async Task<ImmutableList<IJobPosition>> OnInvoke()
+	protected override async Task<IImmutableList<IJobPosition>> OnInvoke()
 	{
 		return await cache.WithDto(Dto).AsEntities<IJobPosition>();
 	}

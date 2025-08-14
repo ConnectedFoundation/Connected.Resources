@@ -11,7 +11,7 @@ internal sealed class Delete(IStorageProvider storage, ITimeSheetCache cache, IE
 	{
 		_ = SetState(await timeSheets.Select(Dto)) as TimeSheet ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<TimeSheet>().Update(Dto.AsEntity<TimeSheet>(State.Deleted));
+		await storage.Open<TimeSheet>().Update(Dto.AsEntity<TimeSheet>(State.Delete));
 		await cache.Remove(Dto.Id);
 		await events.Deleted(this, timeSheets, Dto.Id);
 	}

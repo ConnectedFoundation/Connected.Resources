@@ -10,7 +10,7 @@ internal sealed class InsertResource(IStorageProvider storage, IEventService eve
 {
 	protected override async Task<long> OnInvoke()
 	{
-		var entity = await storage.Open<ResourceUtilization>().Update(Dto.AsEntity<ResourceUtilization>(Entities.State.New)) ?? throw new NullReferenceException(Strings.ErrEntityExpected);
+		var entity = await storage.Open<ResourceUtilization>().Update(Dto.AsEntity<ResourceUtilization>(Entities.State.Add)) ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
 		SetState(entity);
 

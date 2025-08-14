@@ -12,7 +12,7 @@ internal sealed class Update(IStorageProvider storage, IEventService events, ITi
 	{
 		var entity = SetState(await items.Select(Dto)) as TimeSheetItem ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<TimeSheetItem>().Update(entity.Merge(Dto, State.Default), Dto, async () =>
+		await storage.Open<TimeSheetItem>().Update(entity.Merge(Dto, State.Update), Dto, async () =>
 		{
 			await cache.Refresh(Dto.Id);
 			return SetState(await items.Select(Dto)) as TimeSheetItem;

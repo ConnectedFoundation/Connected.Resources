@@ -10,7 +10,7 @@ internal sealed class Insert(IStorageProvider storage, IWorkItemService workItem
 {
 	protected override async Task<long> OnInvoke()
 	{
-		var entity = await storage.Open<WorkItem>().Update(Dto.AsEntity<WorkItem>(State.New)) ?? throw new NullReferenceException(Strings.ErrEntityExpected);
+		var entity = await storage.Open<WorkItem>().Update(Dto.AsEntity<WorkItem>(State.Add)) ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
 		await events.Inserted(this, workItems, entity.Id);
 

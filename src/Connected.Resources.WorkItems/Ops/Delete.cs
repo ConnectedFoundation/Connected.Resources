@@ -11,7 +11,7 @@ internal sealed class Delete(IStorageProvider storage, IWorkItemService workItem
 	{
 		_ = SetState(await workItems.Select(Dto)) as WorkItem ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<WorkItem>().Update(Dto.AsEntity<WorkItem>(State.Deleted));
+		await storage.Open<WorkItem>().Update(Dto.AsEntity<WorkItem>(State.Delete));
 		await cache.Remove(Dto.Id);
 		await events.Deleted(this, workItems, Dto.Id);
 	}

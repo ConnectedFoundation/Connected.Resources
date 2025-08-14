@@ -17,7 +17,7 @@ internal sealed class TimeLogService(IServiceProvider services)
 		return await Invoke(GetOperation<Insert>(), dto);
 	}
 
-	public async Task<ImmutableList<ITimeLog>> Query(IQueryTimeLogsDto dto)
+	public async Task<IImmutableList<ITimeLog>> Query(IQueryTimeLogsDto dto)
 	{
 		return await Invoke(GetOperation<Query>(), dto);
 	}

@@ -11,7 +11,7 @@ internal sealed class Delete(IStorageProvider storage, IResourceService resource
 	{
 		_ = SetState(await resources.Select(Dto)) as Resource ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<Resource>().Update(Dto.AsEntity<Resource>(State.Deleted));
+		await storage.Open<Resource>().Update(Dto.AsEntity<Resource>(State.Delete));
 		await cache.Remove(Dto.Id);
 		await events.Deleted(this, resources, Dto.Id);
 	}
