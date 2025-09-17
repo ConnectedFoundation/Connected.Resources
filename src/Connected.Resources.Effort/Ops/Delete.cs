@@ -12,7 +12,7 @@ internal sealed class Delete(IStorageProvider storage, IEventService events, IEf
 	{
 		var entity = SetState(await effort.Select(Dto)) as Effort ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<Effort>().Update(entity.Merge(Dto, State.Deleted));
+		await storage.Open<Effort>().Update(entity.Merge(Dto, State.Delete));
 		await cache.Remove(Dto.Id);
 		await events.Deleted(this, effort, entity.Id);
 	}

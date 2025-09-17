@@ -17,7 +17,7 @@ internal sealed class TimeSheetService(IServiceProvider services)
 		return await Invoke(GetOperation<Insert>(), dto);
 	}
 
-	public async Task<ImmutableList<ITimeSheet>> Query(IQueryDto? dto)
+	public async Task<IImmutableList<ITimeSheet>> Query(IQueryDto? dto)
 	{
 		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
 	}

@@ -12,5 +12,5 @@ public interface IJobPositionService
 	Task Update(IUpdateJobPositionDto dto);
 	Task Delete(IPrimaryKeyDto<int> dto);
 	Task<IJobPosition?> Select(IPrimaryKeyDto<int> dto);
-	Task<ImmutableList<IJobPosition>> Query(IQueryDto? dto);
+	Task<IImmutableList<IJobPosition>> Query(IQueryDto? dto);
 }

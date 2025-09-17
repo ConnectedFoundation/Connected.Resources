@@ -8,11 +8,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Connected.Sdk" Version="1.0.7-beta1" />
+		<ProjectReference Include="..\..\..\Connected.Core\src\Connected.Sdk\Connected.Sdk.csproj" />
+		<ProjectReference Include="..\Connected.Resources.Types.Model\Connected.Resources.Types.Model.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Connected.Resources.Types.Model\Connected.Resources.Types.Model.csproj" />
+	  <Folder Include="Persons\Dtos\" />
 	</ItemGroup>
 
 </Project>

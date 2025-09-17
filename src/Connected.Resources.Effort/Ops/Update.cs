@@ -12,7 +12,7 @@ internal sealed class Update(IStorageProvider storage, IEventService events, IEf
 	{
 		var entity = SetState(await effort.Select(Dto)) as Effort ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<Effort>().Update(entity.Merge(Dto, Entities.State.Default), Dto, async () =>
+		await storage.Open<Effort>().Update(entity.Merge(Dto, Entities.State.Update), Dto, async () =>
 		{
 			await cache.Remove(Dto.Id);
 			return SetState(await effort.Select(Dto)) as Effort;

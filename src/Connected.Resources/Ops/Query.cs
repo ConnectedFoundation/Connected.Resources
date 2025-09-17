@@ -4,9 +4,9 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.Ops;
 internal sealed class Query(IResourceCache cache)
-	: ServiceFunction<IQueryDto, ImmutableList<IResource>>
+	: ServiceFunction<IQueryDto, IImmutableList<IResource>>
 {
-	protected override async Task<ImmutableList<IResource>> OnInvoke()
+	protected override async Task<IImmutableList<IResource>> OnInvoke()
 	{
 		return await cache.WithDto(Dto).AsEntities<IResource>();
 	}

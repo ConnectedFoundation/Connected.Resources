@@ -12,7 +12,7 @@ internal sealed class Update(IStorageProvider storage, IResourceService resource
 	{
 		var entity = SetState(await resources.Select(Dto.CreatePrimaryKey(Dto.Id))) as Resource ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<Resource>().Update(entity.Merge(Dto, State.Default), Dto, async () =>
+		await storage.Open<Resource>().Update(entity.Merge(Dto, State.Update), Dto, async () =>
 		{
 			await cache.Refresh(Dto.Id);
 

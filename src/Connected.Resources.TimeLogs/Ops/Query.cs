@@ -6,9 +6,9 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.TimeLogs.Ops;
 internal sealed class Query(IStorageProvider storage)
-	: ServiceFunction<IQueryTimeLogsDto, ImmutableList<ITimeLog>>
+	: ServiceFunction<IQueryTimeLogsDto, IImmutableList<ITimeLog>>
 {
-	protected override async Task<ImmutableList<ITimeLog>> OnInvoke()
+	protected override async Task<IImmutableList<ITimeLog>> OnInvoke()
 	{
 		return await storage.Open<TimeLog>().AsEntities<ITimeLog>(f => (Dto.Resource is null || f.Resource == Dto.Resource)
 			&& (Dto.Start is null || f.Start >= Dto.Start)

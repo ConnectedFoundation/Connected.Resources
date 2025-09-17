@@ -1,5 +1,6 @@
 ﻿using Connected.Annotations.Entities;
 using Connected.Resources.Effort;
+using Connected.Resources.Persons;
 using Connected.Resources.TimeLogs;
 using Connected.Resources.TimeSheets;
 using Connected.Resources.TimeSheets.Items;
@@ -16,5 +17,5 @@ public static class ResourcesMetaData
 	public const string WorkSheetItemKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IWorkSheetItem)}";
 	public const string ResourceUtilizationKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IResourceUtilization)}";
 	public const string EffortKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IEffort)}";
-
+	public const string PersonKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IPerson)}";
 }

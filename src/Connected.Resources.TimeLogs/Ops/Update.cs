@@ -12,7 +12,7 @@ internal sealed class Update(IStorageProvider storage, IEventService events, ITi
 	{
 		var entity = SetState(await timeLogs.Select(Dto)) as TimeLog ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<TimeLog>().Update(entity.Merge(Dto, State.Default), Dto, async () =>
+		await storage.Open<TimeLog>().Update(entity.Merge(Dto, State.Update), Dto, async () =>
 		{
 			await cache.Remove(Dto.Id);
 

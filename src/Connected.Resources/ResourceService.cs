@@ -16,12 +16,12 @@ internal sealed class ResourceService(IServiceProvider services) : Service(servi
 		return await Invoke(GetOperation<Insert>(), dto);
 	}
 
-	public async Task<ImmutableList<IResource>> Query(IQueryDto? dto)
+	public async Task<IImmutableList<IResource>> Query(IQueryDto? dto)
 	{
 		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
 	}
 
-	public async Task<ImmutableList<IResource>> Lookup(IPrimaryKeyListDto<int> dto)
+	public async Task<IImmutableList<IResource>> Lookup(IPrimaryKeyListDto<int> dto)
 	{
 		return await Invoke(GetOperation<Lookup>(), dto);
 	}

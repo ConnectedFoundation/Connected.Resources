@@ -24,5 +24,5 @@ public interface ITimeSheetItemService
 	Task<IImmutableList<ITimeSheetItem>> Query(IQueryTimeSheetItemsDto dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get)]
-	Task<ImmutableList<ITimeSheetItem>> Query(IQueryDto? dto);
+	Task<IImmutableList<ITimeSheetItem>> Query(IQueryDto? dto);
 }

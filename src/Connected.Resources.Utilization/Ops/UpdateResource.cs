@@ -12,7 +12,7 @@ internal sealed class UpdateResource(IStorageProvider storage, IEventService eve
 	{
 		var entity = SetState(await resources.Select(Dto)) as ResourceUtilization ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<ResourceUtilization>().Update(entity.Merge(Dto, Entities.State.Default), Dto, async () =>
+		await storage.Open<ResourceUtilization>().Update(entity.Merge(Dto, Entities.State.Update), Dto, async () =>
 		{
 			await cache.Remove(Dto.Id);
 

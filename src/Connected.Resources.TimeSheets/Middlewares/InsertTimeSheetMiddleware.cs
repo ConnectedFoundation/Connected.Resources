@@ -9,10 +9,8 @@ internal sealed class InsertTimeSheetMiddleware(ITimeSheetService timeSheets)
 	: ServiceFunctionMiddleware<IInsertTimeSheetDto, int>
 {
 
-	protected override async Task<int> OnInvoke(int result)
+	protected override async Task OnInvoke()
 	{
-		await TimeSheetsUtils.EnsureSingleDefault(timeSheets, result);
-
-		return result;
+		await TimeSheetsUtils.EnsureSingleDefault(timeSheets, Result);
 	}
 }

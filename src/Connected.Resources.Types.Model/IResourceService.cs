@@ -21,8 +21,8 @@ public interface IResourceService
 	Task<IResource?> Select(IPrimaryKeyDto<int> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
-	Task<ImmutableList<IResource>> Query(IQueryDto? dto);
+	Task<IImmutableList<IResource>> Query(IQueryDto? dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
-	Task<ImmutableList<IResource>> Lookup(IPrimaryKeyListDto<int> dto);
+	Task<IImmutableList<IResource>> Lookup(IPrimaryKeyListDto<int> dto);
 }

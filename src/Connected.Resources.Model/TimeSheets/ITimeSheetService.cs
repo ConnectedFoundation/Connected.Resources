@@ -21,5 +21,5 @@ public interface ITimeSheetService
 	Task<ITimeSheet?> Select(IPrimaryKeyDto<int> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post)]
-	Task<ImmutableList<ITimeSheet>> Query(IQueryDto? dto);
+	Task<IImmutableList<ITimeSheet>> Query(IQueryDto? dto);
 }

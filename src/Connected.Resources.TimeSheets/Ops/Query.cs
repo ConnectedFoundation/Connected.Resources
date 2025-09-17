@@ -4,9 +4,9 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.TimeSheets.Ops;
 internal sealed class Query(ITimeSheetCache cache)
-	: ServiceFunction<IQueryDto, ImmutableList<ITimeSheet>>
+	: ServiceFunction<IQueryDto, IImmutableList<ITimeSheet>>
 {
-	protected override async Task<ImmutableList<ITimeSheet>> OnInvoke()
+	protected override async Task<IImmutableList<ITimeSheet>> OnInvoke()
 	{
 		return await cache.WithDto(Dto).AsEntities<ITimeSheet>();
 	}
