@@ -1,6 +1,6 @@
 ﻿using Connected.Caching;
 
 namespace Connected.Resources.JobPositions;
-internal interface IJobPositionCache : IEntityCache<JobPosition, int>
+internal interface IJobPositionCache : IEntityCache<IJobPosition, int>
 {
 }

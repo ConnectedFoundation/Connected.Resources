@@ -3,6 +3,6 @@ using Connected.Storage;
 
 namespace Connected.Resources.TimeSheets;
 internal sealed class TimeSheetCache(ICachingService cache, IStorageProvider storage)
-	: EntityCache<TimeSheet, int>(cache, storage, ResourcesMetaData.TimeSheetKey), ITimeSheetCache
+	: EntityCache<ITimeSheet, TimeSheet, int>(cache, storage, ResourcesMetaData.TimeSheetKey), ITimeSheetCache
 {
 }

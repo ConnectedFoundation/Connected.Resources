@@ -1,6 +1,6 @@
 ﻿using Connected.Caching;
 
 namespace Connected.Resources;
-internal interface IResourceCache : IEntityCache<Resource, int>
+internal interface IResourceCache : IEntityCache<IResource, int>
 {
 }
