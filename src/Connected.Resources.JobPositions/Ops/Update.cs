@@ -12,7 +12,7 @@ internal sealed class Update(IStorageProvider storage, IJobPositionService jobPo
 	{
 		var entity = SetState(await jobPositions.Select(Dto.CreatePrimaryKey(Dto.Id))) as JobPosition ?? throw new NullReferenceException(Strings.ErrEntityExpected);
 
-		await storage.Open<JobPosition>().Update(entity.Merge(Dto, State.Add), Dto, async () =>
+		await storage.Open<JobPosition>().Update(entity.Merge(Dto, State.Update), Dto, async () =>
 		{
 			await cache.Refresh(Dto.Id);
 

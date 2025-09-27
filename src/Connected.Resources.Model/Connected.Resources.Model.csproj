@@ -12,8 +12,4 @@
 		<ProjectReference Include="..\Connected.Resources.Types.Model\Connected.Resources.Types.Model.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Persons\Dtos\" />
-	</ItemGroup>
-
 </Project>

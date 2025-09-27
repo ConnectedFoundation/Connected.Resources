@@ -1,11 +1,14 @@
-﻿using Connected.Resources.Persons;
+﻿using Connected.Annotations.Entities;
+using Connected.Entities;
 
 namespace Connected.Resources.Employees;
-public interface IEmployee : IPerson
+
+[EntityKey(ResourcesMetaData.EmployeeKey)]
+public interface IEmployee : IEntity<int>
 {
 	int? JobPosition { get; init; }
-	int? Department { get; init; }
-	int? CostPlace { get; init; }
+	int? OrganizationUnit { get; init; }
+	int? CostCenter { get; init; }
 	int? Parent { get; init; }
 	int? EmploymentType { get; init; }
 }

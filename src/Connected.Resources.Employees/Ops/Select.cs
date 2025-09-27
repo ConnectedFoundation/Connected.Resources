@@ -1,0 +1,12 @@
+﻿using Connected.Entities;
+using Connected.Services;
+
+namespace Connected.Resources.Employees.Ops;
+internal sealed class Select(IEmployeeCache cache)
+	: ServiceFunction<IPrimaryKeyDto<int>, IEmployee?>
+{
+	protected override async Task<IEmployee?> OnInvoke()
+	{
+		return await cache.AsEntity(f => f.Id == Dto.Id);
+	}
+}

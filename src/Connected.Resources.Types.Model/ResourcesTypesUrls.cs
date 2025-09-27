@@ -7,4 +7,8 @@ public static class ResourcesTypesUrls
 	public const string JobPositions = $"{Namespace}/job-positions";
 	public const string NamedResources = $"{Namespace}/named-resources";
 	public const string Contacts = $"{Namespace}/contacts";
+	public const string EmploymentTypes = $"{Namespace}/employment-types";
+
+
+	public const string LookupOperation = "lookup";
 }

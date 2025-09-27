@@ -1,0 +1,15 @@
+﻿using Connected.Services;
+using System.ComponentModel.DataAnnotations;
+
+namespace Connected.Resources.Persons.Dtos;
+internal abstract class PersonDto : Dto, IPersonDto
+{
+	[MaxLength(DefaultCodeLength)]
+	public string? Code { get; set; }
+
+	[MaxLength(DefaultNameLength)]
+	public string? FirstName { get; set; }
+
+	[MaxLength(DefaultNameLength)]
+	public string? LastName { get; set; }
+}

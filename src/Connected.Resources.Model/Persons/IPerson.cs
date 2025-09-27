@@ -1,7 +1,10 @@
-﻿using Connected.Entities;
+﻿using Connected.Annotations.Entities;
+using Connected.Entities;
 using Connected.Identities;
 
 namespace Connected.Resources.Persons;
+
+[EntityKey(ResourcesMetaData.PersonKey)]
 public interface IPerson : IEntity<int>, IIdentity
 {
 	string? Code { get; init; }
