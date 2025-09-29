@@ -5,7 +5,7 @@ using System.Collections.Immutable;
 
 namespace Connected.Resources.ContactTypes;
 
-[Service, ServiceUrl(ResourcesTypesUrls.Contacts)]
+[Service, ServiceUrl(ResourcesTypesUrls.ContactTypes)]
 public interface IContactTypeService
 {
 	[ServiceOperation(ServiceOperationVerbs.Post)]

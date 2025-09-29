@@ -1,4 +1,5 @@
-﻿using Connected.Services;
+﻿using Connected.Entities;
+using Connected.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Connected.Resources.Persons.Dtos;
@@ -12,4 +13,6 @@ internal abstract class PersonDto : Dto, IPersonDto
 
 	[MaxLength(DefaultNameLength)]
 	public string? LastName { get; set; }
+
+	public Status Status { get; set; } = Status.Disabled;
 }

@@ -25,4 +25,7 @@ public interface IPersonService
 
 	[ServiceOperation(ServiceOperationVerbs.Get)]
 	Task<IPerson?> Select(IPrimaryKeyDto<int> dto);
+
+	[ServiceOperation(ServiceOperationVerbs.Get), ServiceUrl(ResourcesMetaData.SelectByCodeOperation)]
+	Task<IPerson?> Select(IValueDto<string> dto);
 }

@@ -32,6 +32,11 @@ internal sealed class PersonService(IServiceProvider services)
 		return await Invoke(GetOperation<Select>(), dto);
 	}
 
+	public async Task<IPerson?> Select(IValueDto<string> dto)
+	{
+		return await Invoke(GetOperation<SelectByCode>(), dto);
+	}
+
 	public async Task Update(IUpdatePersonDto dto)
 	{
 		await Invoke(GetOperation<Update>(), dto);

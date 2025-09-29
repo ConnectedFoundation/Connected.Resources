@@ -19,5 +19,7 @@ internal sealed class ResourcesImage : RuntimeImage
 		Application.RegisterMicroService("Connected.Resources.WorkSheets.dll");
 		Application.RegisterMicroService("Connected.Resources.Employees.dll");
 		Application.RegisterMicroService("Connected.Resources.Persons.dll");
+
+		Application.RegisterMicroService("Connected.Resources.Extensions.dll");
 	}
 }

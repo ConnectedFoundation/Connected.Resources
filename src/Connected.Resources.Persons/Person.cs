@@ -19,4 +19,7 @@ internal sealed record Person : ConsistentEntity<int>, IPerson
 
 	[Ordinal(3), Length(Dto.DefaultCodeLength), Index(true)]
 	public required string Token { get; init; }
+
+	[Ordinal(4)]
+	public Status Status { get; init; }
 }
