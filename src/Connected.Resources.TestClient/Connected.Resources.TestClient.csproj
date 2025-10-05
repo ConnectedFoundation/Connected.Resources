@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>f7102420-3502-4cf7-9f43-b4566cc0f582</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Connected.Common\src\Connected.Common.Runtime\Connected.Common.Runtime.csproj" />
+    <ProjectReference Include="..\..\..\Connected.Core\src\Connected.Core.Identities.Runtime\Connected.Core.Identities.Runtime.csproj" />
+    <ProjectReference Include="..\..\..\Connected.Core\src\Connected.Core.Membership.Runtime\Connected.Core.Membership.Runtime.csproj" />
+    <ProjectReference Include="..\..\..\Connected.Core\src\Connected.Runtime\Connected.Runtime.csproj" />
+    <ProjectReference Include="..\Connected.Resources.Runtime\Connected.Resources.Runtime.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

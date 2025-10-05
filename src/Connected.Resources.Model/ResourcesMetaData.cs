@@ -23,5 +23,5 @@ public static class ResourcesMetaData
 	public const string PersonContactKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IPersonContact)}";
 	public const string EmployeeKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IEmployee)}";
 
-	public const string SelectByCodeOperation = "selectByCode";
+	public const string SelectByCodeOperation = "select-by-code";
 }

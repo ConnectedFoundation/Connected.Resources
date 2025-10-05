@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependencies", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Mock", "Connected.Resources.Mock\Connected.Resources.Mock.csproj", "{B2E8F027-4BBB-4E09-9497-61E1BF688FD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Model", "..\src\Connected.Resources.Model\Connected.Resources.Model.csproj", "{441F01C1-388E-7258-1C74-2FDEBEE1DB3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Test", "Connected.Resources.Test\Connected.Resources.Test.csproj", "{17A8685E-929A-40F3-83D1-2D1766C96DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Core.Mock.Sdk", "..\..\Connected.Core\tests\Connected.Core.Mock.Sdk\Connected.Core.Mock.Sdk.csproj", "{566BDF62-3C54-499D-5BF6-CBF0E5C4196A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.Mock.Sdk", "Connected.Resources.Mock.Sdk\Connected.Resources.Mock.Sdk.csproj", "{B7139B53-24D5-40CB-8520-000A7CA43CE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2E8F027-4BBB-4E09-9497-61E1BF688FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E8F027-4BBB-4E09-9497-61E1BF688FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E8F027-4BBB-4E09-9497-61E1BF688FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E8F027-4BBB-4E09-9497-61E1BF688FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441F01C1-388E-7258-1C74-2FDEBEE1DB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441F01C1-388E-7258-1C74-2FDEBEE1DB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441F01C1-388E-7258-1C74-2FDEBEE1DB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441F01C1-388E-7258-1C74-2FDEBEE1DB3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A8685E-929A-40F3-83D1-2D1766C96DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A8685E-929A-40F3-83D1-2D1766C96DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A8685E-929A-40F3-83D1-2D1766C96DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A8685E-929A-40F3-83D1-2D1766C96DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566BDF62-3C54-499D-5BF6-CBF0E5C4196A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566BDF62-3C54-499D-5BF6-CBF0E5C4196A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566BDF62-3C54-499D-5BF6-CBF0E5C4196A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566BDF62-3C54-499D-5BF6-CBF0E5C4196A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7139B53-24D5-40CB-8520-000A7CA43CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7139B53-24D5-40CB-8520-000A7CA43CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7139B53-24D5-40CB-8520-000A7CA43CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7139B53-24D5-40CB-8520-000A7CA43CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{441F01C1-388E-7258-1C74-2FDEBEE1DB3F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{566BDF62-3C54-499D-5BF6-CBF0E5C4196A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C427D65E-DD41-40BA-8CCE-73EBF4BC9981}
+	EndGlobalSection
+EndGlobal
