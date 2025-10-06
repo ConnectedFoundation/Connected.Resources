@@ -4,7 +4,8 @@ using Connected.Resources.Persons;
 
 namespace Connected.Resources.Mock.Persons;
 
-public class PersonMock : EntityMock<int>, IPerson
+public class PersonMock
+	: EntityMock<int>, IPerson
 {
 	public string? Code { get; init; }
 	public string? FirstName { get; init; }

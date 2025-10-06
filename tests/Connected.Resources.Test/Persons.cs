@@ -1,4 +1,5 @@
 ﻿using Connected.Core.Mock;
+using Connected.Core.Services.Mock;
 using Connected.Entities;
 using Connected.Resources.Mock.Persons;
 using Connected.Resources.Mock.Persons.Dtos;
@@ -12,55 +13,53 @@ public class Persons()
 	[TestMethod]
 	public async Task OnInvoke()
 	{
-		var id = await Insert<InsertPersonDtoMock, int>(new InsertPersonDtoMock
+		var id = await Insert<InsertPersonDtoMock, int>(new()
 		{
-			FirstName = "John",
-			LastName = "Lennon",
-			Code = "LEJ",
+			FirstName = ValueGenerator.Generate(8),
+			LastName = ValueGenerator.Generate(16),
+			Code = ValueGenerator.Generate(4),
 			Status = Status.Enabled
 		});
 
 		Assert.IsTrue(id > 0);
 
-		var entities = await Query<PersonMock>();
+		var entities = await Query<DtoMock, PersonMock>(null);
 
-		Assert.IsTrue(entities is not null && entities.Count > 0);
+		Assert.IsNotNull(entities);
+		Assert.IsTrue(entities.Count > 0);
 
-		entities = await Get<List<PersonMock>>(ResourcesUrls.LookupOperation,
-		[
-			new("Items", id)
-		]);
+		entities = await GetList<PrimaryKeyListDtoMock<int>, PersonMock>(ResourcesUrls.LookupOperation, new(id));
 
-		Assert.IsTrue(entities is not null && entities.Count > 0);
+		Assert.IsNotNull(entities);
+		Assert.IsTrue(entities.Count > 0);
 
-		await Update(new UpdatePersonDtoMock
+		var updateDto = new UpdatePersonDtoMock
 		{
 			Id = id,
-			FirstName = "Ringo",
-			LastName = "Starr",
-			Code = "LEJ",
+			FirstName = ValueGenerator.Generate(8),
+			LastName = ValueGenerator.Generate(16),
+			Code = ValueGenerator.Generate(4),
 			Status = Status.Disabled,
-		});
+		};
 
-		var entity = await Select<PersonMock>(id);
+		await Update(updateDto);
 
-		Assert.IsTrue(entity is not null
-			&& string.Equals(entity.FirstName, "Ringo", StringComparison.OrdinalIgnoreCase)
-			&& string.Equals(entity.LastName, "Starr", StringComparison.OrdinalIgnoreCase)
-			&& entity.Status == Status.Disabled);
+		var entity = await Select<PrimaryKeyDtoMock<int>, PersonMock>(id);
 
-		entity = await Get<PersonMock>(ResourcesMetaData.SelectByCodeOperation, new Dictionary<string, object?>
-		{
-			{"Value", entity.Code }
-		});
+		Assert.IsNotNull(entity);
 
-		Assert.IsTrue(entity is not null);
+		Assert.AreEqual(entity.FirstName, updateDto.FirstName);
+		Assert.AreEqual(entity.LastName, updateDto.LastName);
+		Assert.AreEqual(entity.Status, updateDto.Status);
 
-		await Delete(id);
+		entity = await Get<ValueDtoMock<string>, PersonMock>(ResourcesMetaData.SelectByCodeOperation, entity.Code ?? string.Empty);
 
-		entity = await Select<PersonMock>(id);
+		Assert.IsNotNull(entity);
+
+		await Delete<PrimaryKeyDtoMock<int>>(id);
+
+		entity = await Select<PrimaryKeyDtoMock<int>, PersonMock>(id);
 
 		Assert.IsNull(entity);
-
 	}
 }
