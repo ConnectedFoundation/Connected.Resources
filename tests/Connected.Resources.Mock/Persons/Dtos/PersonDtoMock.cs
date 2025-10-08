@@ -1,6 +1,6 @@
 ﻿using Connected.Core.Services.Mock;
 using Connected.Entities;
-using Connected.Resources.Persons.Dtos;
+using Connected.Resources.Resources.Persons.Dtos;
 
 namespace Connected.Resources.Mock.Persons.Dtos;
 public class PersonDtoMock

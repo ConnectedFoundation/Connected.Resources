@@ -1,6 +1,6 @@
 ﻿using Connected.Core.Entities.Mock;
 using Connected.Entities;
-using Connected.Resources.Persons;
+using Connected.Resources.Resources.Persons;
 
 namespace Connected.Resources.Mock.Persons;
 

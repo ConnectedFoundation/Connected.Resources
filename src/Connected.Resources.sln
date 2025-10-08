@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Resources.TestCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected", "..\..\Connected.Core\src\Connected\Connected.csproj", "{E4B63266-97D8-B585-F4AA-A9D0DFF6D631}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Model", "..\..\Connected.Core\src\Connected.Model\Connected.Model.csproj", "{F2EDE525-9D0D-CE0C-8132-7E60186FBEB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{E4B63266-97D8-B585-F4AA-A9D0DFF6D631}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4B63266-97D8-B585-F4AA-A9D0DFF6D631}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4B63266-97D8-B585-F4AA-A9D0DFF6D631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2EDE525-9D0D-CE0C-8132-7E60186FBEB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2EDE525-9D0D-CE0C-8132-7E60186FBEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2EDE525-9D0D-CE0C-8132-7E60186FBEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2EDE525-9D0D-CE0C-8132-7E60186FBEB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{F1D9D342-3FD2-0F6E-F96A-5268EEA13A08} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{38238A7A-F0F8-08AF-6F98-D07A9F213549} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{E4B63266-97D8-B585-F4AA-A9D0DFF6D631} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F2EDE525-9D0D-CE0C-8132-7E60186FBEB2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B57DD60-9CBD-4DA7-BBA4-1562AEF476E3}

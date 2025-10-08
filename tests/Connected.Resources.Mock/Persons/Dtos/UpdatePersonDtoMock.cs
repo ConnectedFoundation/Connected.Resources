@@ -1,4 +1,4 @@
-﻿using Connected.Resources.Persons.Dtos;
+﻿using Connected.Resources.Resources.Persons.Dtos;
 
 namespace Connected.Resources.Mock.Persons.Dtos;
 public class UpdatePersonDtoMock
