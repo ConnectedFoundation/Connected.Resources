@@ -9,7 +9,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\Connected.Core\src\Connected.Sdk\Connected.Sdk.csproj" />
-		<ProjectReference Include="..\Connected.Resources.Types.Model\Connected.Resources.Types.Model.csproj" />
 	</ItemGroup>
 
 </Project>

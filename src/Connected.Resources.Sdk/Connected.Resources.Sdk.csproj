@@ -7,10 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Connected.Resources.Documents.Model\Connected.Resources.Documents.Model.csproj" />
     <ProjectReference Include="..\Connected.Resources.Extensions\Connected.Resources.Extensions.csproj" />
     <ProjectReference Include="..\Connected.Resources.Model\Connected.Resources.Model.csproj" />
-    <ProjectReference Include="..\Connected.Resources.Types.Model\Connected.Resources.Types.Model.csproj" />
   </ItemGroup>
 
 </Project>

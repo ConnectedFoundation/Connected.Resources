@@ -9,11 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Connected.Common\src\Connected.Common.Runtime\Connected.Common.Runtime.csproj" />
-    <ProjectReference Include="..\..\..\Connected.Core\src\Connected.Core.Identities.Runtime\Connected.Core.Identities.Runtime.csproj" />
-    <ProjectReference Include="..\..\..\Connected.Core\src\Connected.Core.Membership.Runtime\Connected.Core.Membership.Runtime.csproj" />
-    <ProjectReference Include="..\..\..\Connected.Core\src\Connected.Runtime\Connected.Runtime.csproj" />
-    <ProjectReference Include="..\Connected.Resources.Runtime\Connected.Resources.Runtime.csproj" />
+    <ProjectReference Include="..\..\..\Connected.Core\src\Connected\Connected.csproj" />
+    <ProjectReference Include="..\Connected.Resources.Sdk\Connected.Resources.Sdk.csproj" />
+    <ProjectReference Include="..\Connected.Resources\Connected.Resources.csproj" />
   </ItemGroup>
 
   <ItemGroup>

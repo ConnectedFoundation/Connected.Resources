@@ -1,13 +1,13 @@
 ﻿using Connected.Annotations.Entities;
-using Connected.Resources.Effort;
-using Connected.Resources.Employees;
-using Connected.Resources.Persons;
-using Connected.Resources.Persons.Contacts;
-using Connected.Resources.TimeLogs;
-using Connected.Resources.TimeSheets;
-using Connected.Resources.TimeSheets.Items;
-using Connected.Resources.Utilization;
-using Connected.Resources.WorkSheets;
+using Connected.Resources.Resources.Effort;
+using Connected.Resources.Resources.Employees;
+using Connected.Resources.Resources.Persons;
+using Connected.Resources.Resources.Persons.Contacts;
+using Connected.Resources.Resources.TimeLogs;
+using Connected.Resources.Resources.TimeSheets;
+using Connected.Resources.Resources.TimeSheets.Items;
+using Connected.Resources.Resources.Utilization;
+using Connected.Resources.Resources.WorkSheets;
 
 namespace Connected.Resources;
 
