@@ -22,4 +22,7 @@ internal sealed record Person : ConsistentEntity<int>, IPerson
 
 	[Ordinal(4)]
 	public Status Status { get; init; }
+
+	[Ordinal(5)]
+	public long? User { get; init; }
 }

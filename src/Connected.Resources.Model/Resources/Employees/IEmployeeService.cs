@@ -18,7 +18,7 @@ public interface IEmployeeService
 	Task Delete(IPrimaryKeyDto<int> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get)]
-	Task<IImmutableList<IEmployee>> Query(IQueryDto? dto);
+	Task<IImmutableList<IEmployee>> Query(IQueryEmployeesDto? dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get), ServiceUrl(ResourcesUrls.LookupOperation)]
 	Task<IImmutableList<IEmployee>> Query(IPrimaryKeyListDto<int> dto);

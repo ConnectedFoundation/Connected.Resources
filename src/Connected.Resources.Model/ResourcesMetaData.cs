@@ -24,4 +24,5 @@ public static class ResourcesMetaData
 	public const string EmployeeKey = $"{SchemaAttribute.ResourcesSchema}.{nameof(IEmployee)}";
 
 	public const string SelectByCodeOperation = "select-by-code";
+	public const string SelectByUserOperation = "select-by-user";
 }

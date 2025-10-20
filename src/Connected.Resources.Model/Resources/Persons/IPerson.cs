@@ -11,4 +11,5 @@ public interface IPerson : IEntity<int>, IIdentity
 	string? FirstName { get; init; }
 	string? LastName { get; init; }
 	Status Status { get; init; }
+	long? User { get; init; }
 }

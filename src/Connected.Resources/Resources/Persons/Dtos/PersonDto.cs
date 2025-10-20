@@ -15,4 +15,5 @@ internal abstract class PersonDto : Dto, IPersonDto
 	public string? LastName { get; set; }
 
 	public Status Status { get; set; } = Status.Disabled;
+	public long? User { get; set; }
 }

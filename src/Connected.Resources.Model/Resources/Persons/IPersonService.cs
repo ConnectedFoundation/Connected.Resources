@@ -28,4 +28,7 @@ public interface IPersonService
 
 	[ServiceOperation(ServiceOperationVerbs.Get), ServiceUrl(ResourcesMetaData.SelectByCodeOperation)]
 	Task<IPerson?> Select(IValueDto<string> dto);
+
+	[ServiceOperation(ServiceOperationVerbs.Get), ServiceUrl(ResourcesMetaData.SelectByUserOperation)]
+	Task<IPerson?> Select(IValueDto<long> dto);
 }

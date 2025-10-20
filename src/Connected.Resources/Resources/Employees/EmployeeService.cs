@@ -17,9 +17,9 @@ internal sealed class EmployeeService(IServiceProvider services)
 		await Invoke(GetOperation<Insert>(), dto);
 	}
 
-	public async Task<IImmutableList<IEmployee>> Query(IQueryDto? dto)
+	public async Task<IImmutableList<IEmployee>> Query(IQueryEmployeesDto? dto)
 	{
-		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
+		return await Invoke(GetOperation<Query>(), dto ?? new QueryEmployeesDto());
 	}
 
 	public async Task<IImmutableList<IEmployee>> Query(IPrimaryKeyListDto<int> dto)

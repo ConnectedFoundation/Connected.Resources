@@ -8,4 +8,5 @@ public interface IPersonDto : IDto
 	string? FirstName { get; set; }
 	string? LastName { get; set; }
 	Status Status { get; set; }
+	long? User { get; set; }
 }
