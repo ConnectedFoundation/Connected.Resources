@@ -3,6 +3,7 @@ using Connected.Annotations.Entities;
 using Connected.Entities;
 
 namespace Connected.Resources.Types.JobPositions;
+[Table(Schema = SchemaAttribute.ResourcesSchema)]
 internal sealed record JobPosition : ConsistentEntity<int>, IJobPosition
 {
 	[Ordinal(0), Length(128), Index(true)]
