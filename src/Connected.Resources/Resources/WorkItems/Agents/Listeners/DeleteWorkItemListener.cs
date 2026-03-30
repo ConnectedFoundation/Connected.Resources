@@ -1,22 +1,21 @@
 ﻿using Connected.Annotations;
-using Connected.Collections;
 using Connected.Collections.Queues;
+using Connected.Entities;
 using Connected.Notifications;
-using Connected.Resources.Documents;
 using Connected.Resources.Documents.WorkItems;
-using Connected.Resources.Resources.WorkItems.Agents;
 using Connected.Services;
 
 namespace Connected.Resources.Resources.WorkItems.Agents.Listeners;
 
 [Middleware<IWorkItemService>(ServiceEvents.Deleted)]
-internal sealed class DeleteWorkItemListener(IQueueService queue) : EventListener<IPrimaryKeyDto<long>>
+internal sealed class DeleteWorkItemListener(IDebounceContext<WorkItemAggregatorQueueMessage, WorkItemAggregatorQueueCache, WorkItemAggregatorClient, long> debounce)
+	: EventListener<IPrimaryKeyDto<long>>
 {
 	protected override async Task OnInvoke()
 	{
-		var entity = Sender.GetState<IWorkItem>() ?? throw new NullReferenceException(Strings.ErrEntityExpected);
+		var entity = Sender.GetState<IWorkItem>().Required();
 
 		if (entity.Parent is not null)
-			await queue.Insert<WorkItemAggregatorClient, IPrimaryKeyDto<long>>(Dto.CreatePrimaryKey(entity.Parent.GetValueOrDefault()), Dto.CreateInsertOptions(ResourcesDocumentsMetaData.WorkItemKey));
+			await debounce.Invoke(entity.Parent.GetValueOrDefault());
 	}
 }

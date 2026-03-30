@@ -4,7 +4,8 @@ using Connected.Services;
 
 namespace Connected.Resources.Resources.WorkItems.Agents;
 
-internal class WorkItemAggregatorClient(IWorkItemService workItems) : QueueClient<IPrimaryKeyDto<long>>
+internal class WorkItemAggregatorClient(IWorkItemService workItems)
+	: QueueClient<IPrimaryKeyDto<long>>
 {
 	protected override async Task OnInvoke()
 	{

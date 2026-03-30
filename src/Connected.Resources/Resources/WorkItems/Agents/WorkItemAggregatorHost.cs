@@ -1,11 +1,8 @@
 ﻿using Connected.Collections.Queues;
-using Connected.Resources.Documents;
 
 namespace Connected.Resources.Resources.WorkItems.Agents;
 
-internal sealed class WorkItemAggregatorHost : QueueHost
+internal sealed class WorkItemAggregatorHost
+	: QueueHost<WorkItemAggregatorQueueMessage, WorkItemAggregatorQueueCache>
 {
-	public WorkItemAggregatorHost() : base(ResourcesDocumentsMetaData.WorkItemKey, 2)
-	{
-	}
 }
