@@ -9,7 +9,7 @@ namespace Connected.Resources.Resources.WorkItems.Agents.Listeners;
 
 [Middleware<IWorkItemService>(ServiceEvents.Inserted)]
 internal sealed class InsertWorkItemListener(
-	IDebounceContext<WorkItemAggregatorQueueMessage, WorkItemAggregatorQueueCache, WorkItemAggregatorClient, long> debounce)
+	WorkItemAggregatorClient queue)
 	: EventListener<IInsertWorkItemDto>
 {
 	protected override async Task OnInvoke()
@@ -19,6 +19,6 @@ internal sealed class InsertWorkItemListener(
 		if (entity.Parent is null)
 			return;
 
-		await debounce.Invoke(entity.Parent.GetValueOrDefault(), TimeSpan.FromSeconds(10));
+		await queue.Invoke(Dto.CreatePrimaryKey( entity.Parent.GetValueOrDefault()));
 	}
 }

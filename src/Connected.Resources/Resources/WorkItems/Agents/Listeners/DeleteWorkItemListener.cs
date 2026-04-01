@@ -8,7 +8,8 @@ using Connected.Services;
 namespace Connected.Resources.Resources.WorkItems.Agents.Listeners;
 
 [Middleware<IWorkItemService>(ServiceEvents.Deleted)]
-internal sealed class DeleteWorkItemListener(IDebounceContext<WorkItemAggregatorQueueMessage, WorkItemAggregatorQueueCache, WorkItemAggregatorClient, long> debounce)
+internal sealed class DeleteWorkItemListener(
+	WorkItemAggregatorClient queue)
 	: EventListener<IPrimaryKeyDto<long>>
 {
 	protected override async Task OnInvoke()
@@ -16,6 +17,6 @@ internal sealed class DeleteWorkItemListener(IDebounceContext<WorkItemAggregator
 		var entity = Sender.GetState<IWorkItem>().Required();
 
 		if (entity.Parent is not null)
-			await debounce.Invoke(entity.Parent.GetValueOrDefault());
+			await queue.Invoke(Dto.CreatePrimaryKey( entity.Parent.GetValueOrDefault()));
 	}
 }

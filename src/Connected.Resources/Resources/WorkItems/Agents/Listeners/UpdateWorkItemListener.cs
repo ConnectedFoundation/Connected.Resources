@@ -9,8 +9,9 @@ namespace Connected.Resources.Resources.WorkItems.Agents.Listeners;
 
 [Middleware<IWorkItemService>(ServiceEvents.Updated)]
 internal sealed class UpdateWorkItemListener(
-		IDebounceContext<WorkItemAggregatorQueueMessage, WorkItemAggregatorQueueCache, WorkItemAggregatorClient, long> debounce,
-		IWorkItemService workItems) : EventListener<IUpdateWorkItemDto>
+	WorkItemAggregatorClient queue,
+	IWorkItemService workItems) 
+	: EventListener<IUpdateWorkItemDto>
 {
 	protected override async Task OnInvoke()
 	{
@@ -20,11 +21,11 @@ internal sealed class UpdateWorkItemListener(
 		 * Parent has changed. We need to recalculate the old parent as well.
 		 */
 		if (origin.Parent != current.Parent && origin.Parent is not null)
-			await debounce.Invoke(origin.Parent.GetValueOrDefault());
+			await queue.Invoke(Dto.CreatePrimaryKey( origin.Parent.GetValueOrDefault()));
 		/*
 		 * Recalculate current parent
 		 */
 		if (current.Parent is not null)
-			await debounce.Invoke(current.Parent.GetValueOrDefault());
+			await queue.Invoke(Dto.CreatePrimaryKey( current.Parent.GetValueOrDefault()));
 	}
 }

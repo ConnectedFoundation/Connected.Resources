@@ -1,11 +1,15 @@
 ﻿using Connected.Collections.Queues;
 using Connected.Resources.Documents.WorkItems;
 using Connected.Services;
+using Connected.Storage;
 
 namespace Connected.Resources.Resources.WorkItems.Agents;
 
-internal class WorkItemAggregatorClient(IWorkItemService workItems)
-	: QueueClient<IPrimaryKeyDto<long>>
+internal class WorkItemAggregatorClient(
+	IStorageProvider storage,
+	IWorkItemAggregatorQueueCache cache,
+	IWorkItemService workItems)
+	: QueueClient<WorkItemAggregatorQueueMessage, IPrimaryKeyDto<long>>(storage, cache)
 {
 	protected override async Task OnInvoke()
 	{
