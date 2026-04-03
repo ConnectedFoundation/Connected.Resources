@@ -1,5 +1,4 @@
 ﻿using Connected.Annotations;
-using Connected.Collections.Queues;
 using Connected.Notifications;
 using Connected.Resources.Documents.WorkItems;
 using Connected.Resources.Documents.WorkItems.Dtos;
@@ -9,8 +8,8 @@ namespace Connected.Resources.Resources.WorkItems.Agents.Listeners;
 
 [Middleware<IWorkItemService>(ServiceEvents.Updated)]
 internal sealed class UpdateWorkItemListener(
-	WorkItemAggregatorClient queue,
-	IWorkItemService workItems) 
+	WorkItemAggregatorQueueContext queue,
+	IWorkItemService workItems)
 	: EventListener<IUpdateWorkItemDto>
 {
 	protected override async Task OnInvoke()
@@ -21,11 +20,11 @@ internal sealed class UpdateWorkItemListener(
 		 * Parent has changed. We need to recalculate the old parent as well.
 		 */
 		if (origin.Parent != current.Parent && origin.Parent is not null)
-			await queue.Invoke(Dto.CreatePrimaryKey( origin.Parent.GetValueOrDefault()));
+			await queue.Invoke(Dto.CreatePrimaryKey(origin.Parent.GetValueOrDefault()));
 		/*
 		 * Recalculate current parent
 		 */
 		if (current.Parent is not null)
-			await queue.Invoke(Dto.CreatePrimaryKey( current.Parent.GetValueOrDefault()));
+			await queue.Invoke(Dto.CreatePrimaryKey(current.Parent.GetValueOrDefault()));
 	}
 }

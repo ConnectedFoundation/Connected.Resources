@@ -1,5 +1,4 @@
 ﻿using Connected.Annotations;
-using Connected.Collections.Queues;
 using Connected.Notifications;
 using Connected.Resources.Documents.WorkItems;
 using Connected.Resources.Documents.WorkItems.Dtos;
@@ -9,7 +8,7 @@ namespace Connected.Resources.Resources.WorkItems.Agents.Listeners;
 
 [Middleware<IWorkItemService>(ServiceEvents.Inserted)]
 internal sealed class InsertWorkItemListener(
-	WorkItemAggregatorClient queue)
+	WorkItemAggregatorQueueContext queue)
 	: EventListener<IInsertWorkItemDto>
 {
 	protected override async Task OnInvoke()
@@ -19,6 +18,6 @@ internal sealed class InsertWorkItemListener(
 		if (entity.Parent is null)
 			return;
 
-		await queue.Invoke(Dto.CreatePrimaryKey( entity.Parent.GetValueOrDefault()));
+		await queue.Invoke(Dto.CreatePrimaryKey(entity.Parent.GetValueOrDefault()));
 	}
 }
