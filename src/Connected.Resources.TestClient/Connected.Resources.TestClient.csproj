@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Connected.Core\src\Connected\Connected.csproj" />
+    <ProjectReference Include="$(ConnectedCore)\Connected\Connected.csproj" />
     <ProjectReference Include="..\Connected.Resources.Sdk\Connected.Resources.Sdk.csproj" />
     <ProjectReference Include="..\Connected.Resources\Connected.Resources.csproj" />
   </ItemGroup>
