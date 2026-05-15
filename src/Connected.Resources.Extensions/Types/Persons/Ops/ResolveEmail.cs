@@ -9,11 +9,11 @@ internal sealed class ResolveEmail(IPersonContactService contacts, IContactTypeE
 {
 	protected override async Task<string?> OnInvoke()
 	{
-		if (await contactTypes.ResolveEmailContactType() is not int id)
+		if (await contactTypes.ResolveEmailContactType() is not int typeId)
 			return null;
 
 		var items = await contacts.Query(Dto.CreateHead(Dto.Person));
-		var entity = items.FirstOrDefault(f => f.Id == id);
+		var entity = items.FirstOrDefault(f => f.Type == typeId);
 
 		if (entity is null)
 			return null;
