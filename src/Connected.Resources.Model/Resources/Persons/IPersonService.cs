@@ -18,7 +18,7 @@ public interface IPersonService
 	Task Delete(IPrimaryKeyDto<int> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get)]
-	Task<IImmutableList<IPerson>> Query(IQueryDto? dto);
+	Task<IImmutableList<IPerson>> Query(IQueryPersonDto dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get), ServiceUrl(ResourcesUrls.LookupOperation)]
 	Task<IImmutableList<IPerson>> Query(IPrimaryKeyListDto<int> dto);

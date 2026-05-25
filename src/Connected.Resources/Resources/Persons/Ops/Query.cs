@@ -1,14 +1,19 @@
 ﻿using Connected.Entities;
-using Connected.Resources.Resources.Persons;
+using Connected.Resources.Resources.Persons.Dtos;
 using Connected.Services;
 using System.Collections.Immutable;
 
 namespace Connected.Resources.Resources.Persons.Ops;
 internal sealed class Query(IPersonCache cache)
-	: ServiceFunction<IQueryDto, IImmutableList<IPerson>>
+	: ServiceFunction<IQueryPersonDto, IImmutableList<IPerson>>
 {
 	protected override async Task<IImmutableList<IPerson>> OnInvoke()
 	{
+		var query = cache.AsQueryable();
+
+		if (Dto.Users is { Count: > 0 })
+			query = query.Where(x => Dto.Users.Contains(x.Id));
+
 		return await cache.WithDto(Dto).AsEntities();
 	}
 }

@@ -17,9 +17,9 @@ internal sealed class PersonService(IServiceProvider services)
 		return await Invoke(GetOperation<Insert>(), dto);
 	}
 
-	public async Task<IImmutableList<IPerson>> Query(IQueryDto? dto)
+	public async Task<IImmutableList<IPerson>> Query(IQueryPersonDto dto)
 	{
-		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
+		return await Invoke(GetOperation<Query>(), dto);
 	}
 
 	public async Task<IImmutableList<IPerson>> Query(IPrimaryKeyListDto<int> dto)
