@@ -1,4 +1,5 @@
 ﻿using Connected.Annotations;
+using Connected.Entities;
 using Connected.Services;
 
 namespace Connected.Resources.Resources.Employees.Dtos;
@@ -12,4 +13,5 @@ internal abstract class EmployeeDto : Dto, IEmployeeDto
 
 	[MinValue(1)]
 	public int Id { get; set; }
+	public Status Status { get; set; }
 }

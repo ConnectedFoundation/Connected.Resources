@@ -11,4 +11,5 @@ public interface IEmployee : IEntity<int>
 	int? CostCenter { get; init; }
 	int? Parent { get; init; }
 	int? EmploymentType { get; init; }
+	Status Status { get; init; }
 }

@@ -1,4 +1,5 @@
-﻿using Connected.Services;
+﻿using Connected.Entities;
+using Connected.Services;
 
 namespace Connected.Resources.Resources.Employees.Dtos;
 public interface IEmployeeDto : IPrimaryKeyDto<int>
@@ -8,4 +9,5 @@ public interface IEmployeeDto : IPrimaryKeyDto<int>
 	int? CostCenter { get; set; }
 	int? Parent { get; set; }
 	int? EmploymentType { get; set; }
+	Status Status { get; set; }
 }

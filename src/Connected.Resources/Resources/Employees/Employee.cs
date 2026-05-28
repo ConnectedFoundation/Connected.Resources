@@ -24,4 +24,7 @@ internal sealed record Employee : ConsistentEntity<int>, IEmployee
 
 	[Ordinal(4)]
 	public int? EmploymentType { get; init; }
+
+	[Ordinal(5), Default(Connected.Entities.Status.Enabled)]
+	public Status Status { get; init; }
 }
