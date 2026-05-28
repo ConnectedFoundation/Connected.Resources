@@ -12,7 +12,7 @@ internal sealed record JobPosition : ConsistentEntity<int>, IJobPosition
 	[Ordinal(1), Length(128)]
 	public required string Name { get; init; }
 
-	[Ordinal(2)]
+	[Ordinal(2), Default(Status.Enabled)]
 	public Status Status { get; init; }
 
 	[Ordinal(3)]

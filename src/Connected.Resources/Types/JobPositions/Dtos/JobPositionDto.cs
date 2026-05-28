@@ -12,7 +12,7 @@ internal abstract class JobPositionDto : Dto, IJobPositionDto
 	[Required, MaxLength(128)]
 	public required string Name { get; set; }
 
-	public Status Status { get; set; } = Status.Disabled;
+	public Status Status { get; set; }
 
 	[MinValue(0)]
 	public float? HourlyRate { get; set; }
