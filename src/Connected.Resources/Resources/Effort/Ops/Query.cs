@@ -1,5 +1,4 @@
 ﻿using Connected.Entities;
-using Connected.Resources.Resources.Effort;
 using Connected.Resources.Resources.Effort.Dtos;
 using Connected.Services;
 using Connected.Storage;
@@ -14,8 +13,8 @@ internal sealed class Query(IStorageProvider storage)
 	{
 		return await storage.Open<Effort>().AsEntities<IEffort>(f =>
 				f.TimeSheet == Dto.TimeSheet
-			&& (Dto.Resource is null || f.Resource == Dto.Resource)
-			&& (Dto.Date is null || f.Date == Dto.Date)
-			&& (Dto.WorkItem is null || f.WorkItem == Dto.WorkItem));
+			&& (Dto.Resource == null || f.Resource == Dto.Resource)
+			&& (Dto.Date == null || f.Date == Dto.Date)
+			&& (Dto.WorkItem == null || f.WorkItem == Dto.WorkItem));
 	}
 }

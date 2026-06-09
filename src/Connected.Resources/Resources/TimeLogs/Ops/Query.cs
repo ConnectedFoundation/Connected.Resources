@@ -10,9 +10,10 @@ internal sealed class Query(IStorageProvider storage)
 {
 	protected override async Task<IImmutableList<ITimeLog>> OnInvoke()
 	{
-		return await storage.Open<TimeLog>().AsEntities<ITimeLog>(f => (Dto.Resource is null || f.Resource == Dto.Resource)
-			&& (Dto.Start is null || f.Start >= Dto.Start)
-			&& (Dto.End is null || f.End >= Dto.End)
-			&& (Dto.Type is null || string.Equals(f.Type, Dto.Type, StringComparison.OrdinalIgnoreCase)));
+		return await storage.Open<TimeLog>().AsEntities<ITimeLog>(f =>
+			(Dto.Resource == null || f.Resource == Dto.Resource)
+			&& (Dto.Start == null || f.Start >= Dto.Start)
+			&& (Dto.End == null || f.End >= Dto.End)
+			&& (Dto.Type == null || string.Equals(f.Type, Dto.Type, StringComparison.OrdinalIgnoreCase)));
 	}
 }

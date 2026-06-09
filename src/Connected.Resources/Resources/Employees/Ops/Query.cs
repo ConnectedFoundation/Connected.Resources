@@ -9,7 +9,8 @@ internal sealed class Query(IEmployeeCache cache)
 {
 	protected override async Task<IImmutableList<IEmployee>> OnInvoke()
 	{
-		return await cache.WithDto(Dto).AsEntities(f => Dto.OrganizationUnits is null
-			|| (f.OrganizationUnit is not null && Dto.OrganizationUnits.Any(g => g == f.OrganizationUnit.GetValueOrDefault())));
+		return await cache.WithDto(Dto).AsEntities(f =>
+			Dto.OrganizationUnits == null
+			|| (f.OrganizationUnit != null && Dto.OrganizationUnits.Any(g => g == f.OrganizationUnit.GetValueOrDefault())));
 	}
 }

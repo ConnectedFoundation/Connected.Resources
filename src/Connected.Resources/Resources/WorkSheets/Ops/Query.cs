@@ -12,11 +12,11 @@ internal sealed class Query(IStorageProvider storage)
 	protected override async Task<IImmutableList<IWorkSheetItem>> OnInvoke()
 	{
 		return await storage.Open<WorkSheetItem>().AsEntities<IWorkSheetItem>(f =>
-			(Dto.TimeSheet is null || f.TimeSheet == Dto.TimeSheet)
-			&& (Dto.Resource is null || f.Resource == Dto.Resource)
-			&& (Dto.Start is null || f.Start >= Dto.Start)
-			&& (Dto.End is null || f.End <= Dto.End)
-			&& (Dto.Type is null || f.Type == Dto.Type)
-			&& (Dto.Tags is null || f.Tags is not null && f.Tags.Contains(Dto.Tags)));
+			(Dto.TimeSheet == null || f.TimeSheet == Dto.TimeSheet)
+			&& (Dto.Resource == null || f.Resource == Dto.Resource)
+			&& (Dto.Start == null || f.Start >= Dto.Start)
+			&& (Dto.End == null || f.End <= Dto.End)
+			&& (Dto.Type == null || f.Type == Dto.Type)
+			&& (Dto.Tags == null || f.Tags != null && f.Tags.Contains(Dto.Tags)));
 	}
 }

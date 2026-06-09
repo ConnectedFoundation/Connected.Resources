@@ -1,6 +1,5 @@
 ﻿using Connected.Entities;
 using Connected.Entities.Protection;
-using Connected.Resources.Resources.Employees;
 
 namespace Connected.Resources.Resources.Employees.Protection;
 internal sealed class EmployeeProtector(IEmployeeCache cache)
@@ -8,7 +7,7 @@ internal sealed class EmployeeProtector(IEmployeeCache cache)
 {
 	protected override async Task OnInvoke()
 	{
-		if (await cache.AsEntity(f => f.Parent == Entity.Id) is not null)
+		if (await cache.AsEntity(f => f.Parent == Entity.Id) != null)
 			throw new InvalidOperationException($"{Strings.ErrEntityProtection} ({nameof(IEmployee)})");
 	}
 }
