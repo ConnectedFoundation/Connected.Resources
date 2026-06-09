@@ -16,9 +16,9 @@ internal sealed class QueryIndate(IStorageProvider storage)
 		return await storage.Open<WorkItem>().AsEntities<IWorkItem>(f =>
 				f.Resource == Dto.Resource
 			&& f.TimeSheet == Dto.TimeSheet
-			&& f.Start is not null
+			&& f.Start != null
 			&& f.Start <= Dto.Date
-			&& f.End is not null
+			&& f.End != null
 			&& f.End >= Dto.Date);
 	}
 }
