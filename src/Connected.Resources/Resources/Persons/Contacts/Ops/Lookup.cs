@@ -10,6 +10,6 @@ internal sealed class Lookup(IStorageProvider storage)
 {
 	protected override async Task<IImmutableList<IPersonContact>> OnInvoke()
 	{
-		return await storage.Open<PersonContact>().AsEntities<IPersonContact>(f => Dto.Items.Any(g => g == f.Head));
+		return await storage.Open<PersonContact>().AsEntities<IPersonContact>(f => Dto.Items.Contains(f.Head));
 	}
 }

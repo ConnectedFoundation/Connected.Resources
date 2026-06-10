@@ -9,6 +9,6 @@ internal sealed class Lookup(IContactTypeCache cache)
 {
 	protected override async Task<IImmutableList<IContactType>> OnInvoke()
 	{
-		return await cache.AsEntities(f => Dto.Items.Any(g => g == f.Id));
+		return await cache.AsEntities(f => Dto.Items.Contains(f.Id));
 	}
 }

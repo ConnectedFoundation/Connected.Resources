@@ -11,6 +11,6 @@ internal sealed class QueryResources(IStorageProvider storage)
 {
 	protected override async Task<IImmutableList<IResourceUtilization>> OnInvoke()
 	{
-		return await storage.Open<ResourceUtilization>().AsEntities<IResourceUtilization>(f => Dto.Items.Any(g => g == f.Id));
+		return await storage.Open<ResourceUtilization>().AsEntities<IResourceUtilization>(f => Dto.Items.Contains(f.Id));
 	}
 }
