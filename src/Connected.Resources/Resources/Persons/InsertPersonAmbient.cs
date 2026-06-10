@@ -6,6 +6,12 @@ namespace Connected.Resources.Resources.Persons;
 internal sealed class InsertPersonAmbient
 	: AmbientProvider<IInsertPersonDto>, IInsertPersonAmbient
 {
-	[Required, MaxLength(Services.Dto.DefaultNameLength)]
-	public required string Token { get; set; } = Guid.NewGuid().ToString();
+	public required string Token { get; set; }
+
+    protected override async Task OnInvoke()
+    {
+        Token = Guid.NewGuid().ToString();
+
+        await Task.CompletedTask;
+    }
 }
