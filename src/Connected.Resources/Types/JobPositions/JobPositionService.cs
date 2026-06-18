@@ -16,9 +16,9 @@ internal sealed class JobPositionService(IServiceProvider services) : Service(se
 		return await Invoke(GetOperation<Insert>(), dto);
 	}
 
-	public async Task<IImmutableList<IJobPosition>> Query(IQueryDto? dto)
+	public async Task<IImmutableList<IJobPosition>> Query(IQueryJobPositionDto dto)
 	{
-		return await Invoke(GetOperation<Query>(), dto ?? QueryDto.NoPaging);
+		return await Invoke(GetOperation<Query>(), dto);
 	}
 
 	public async Task<IJobPosition?> Select(IPrimaryKeyDto<int> dto)

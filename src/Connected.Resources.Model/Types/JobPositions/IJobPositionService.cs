@@ -21,5 +21,5 @@ public interface IJobPositionService
 	Task<IJobPosition?> Select(IPrimaryKeyDto<int> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get)]
-	Task<IImmutableList<IJobPosition>> Query(IQueryDto? dto);
+	Task<IImmutableList<IJobPosition>> Query(IQueryJobPositionDto dto);
 }
