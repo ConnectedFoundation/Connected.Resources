@@ -4,13 +4,17 @@ using Connected.Services;
 using System.Collections.Immutable;
 
 namespace Connected.Resources.Resources.Employees.Ops;
+
 internal sealed class Query(IEmployeeCache cache)
-	: ServiceFunction<IQueryEmployeesDto, IImmutableList<IEmployee>>
+    : ServiceFunction<IQueryEmployeesDto, IImmutableList<IEmployee>>
 {
-	protected override async Task<IImmutableList<IEmployee>> OnInvoke()
-	{
-		return await cache.WithDto(Dto).AsEntities(f =>
-			Dto.OrganizationUnits == null
-			|| (f.OrganizationUnit != null && Dto.OrganizationUnits.Any(g => g == f.OrganizationUnit.GetValueOrDefault())));
-	}
+    protected override async Task<IImmutableList<IEmployee>> OnInvoke()
+    {
+        var query = cache.AsQueryable();
+
+        if (Dto.OrganizationUnits is { Count: > 0 })
+            query = query.Where(f => f.OrganizationUnit.HasValue && Dto.OrganizationUnits.Contains(f.OrganizationUnit.Value));
+
+        return await query.AsEntities();
+    }
 }
