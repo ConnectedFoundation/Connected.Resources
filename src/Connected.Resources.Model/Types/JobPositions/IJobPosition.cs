@@ -1,7 +1,9 @@
-﻿using Connected.Entities;
+﻿using Connected.Annotations.Entities;
+using Connected.Entities;
 
 namespace Connected.Resources.Types.JobPositions;
 
+[EntityKey(ResourcesTypesMetaData.JobPositionKey)]
 public interface IJobPosition : IEntity<int>
 {
 	string Code { get; init; }
