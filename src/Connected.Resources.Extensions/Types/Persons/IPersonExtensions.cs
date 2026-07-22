@@ -8,4 +8,5 @@ namespace Connected.Resources.Persons;
 public interface IPersonExtensions
 {
 	Task<string?> ResolveEmail(IResolveEmailDto dto);
+	Task<string?> ResolvePhoneNumber(IResolveEmailDto dto);
 }

@@ -6,4 +6,5 @@ namespace Connected.Resources.ContactTypes;
 public interface IContactTypeExtensions
 {
 	Task<int?> ResolveEmailContactType();
+	Task<int?> ResolvePhoneNumberContactType();
 }

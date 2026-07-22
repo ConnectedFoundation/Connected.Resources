@@ -10,4 +10,9 @@ internal sealed class PersonExtensions(IServiceProvider services)
 	{
 		return await Invoke(GetOperation<ResolveEmail>(), dto);
 	}
+
+    public async Task<string?> ResolvePhoneNumber(IResolveEmailDto dto)
+    {
+        return await Invoke(GetOperation<ResolvePhoneNumber>(), dto);
+    }
 }

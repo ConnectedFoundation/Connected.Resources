@@ -10,4 +10,9 @@ internal sealed class ContactTypeExtensions(IServiceProvider services)
 	{
 		return await Invoke(GetOperation<ResolveEmailContactType>(), Dto.Empty);
 	}
+
+    public async Task<int?> ResolvePhoneNumberContactType()
+    {
+        return await Invoke(GetOperation<ResolvePhoneNumberContactType>(), Dto.Empty);
+    }
 }
