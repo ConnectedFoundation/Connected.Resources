@@ -9,6 +9,9 @@ internal sealed class DeletePersonProtection(IPersonContactService contacts)
 {
 	protected override async Task OnInvoke()
 	{
+		if (State != Entities.State.Delete)
+			return;
+
 		if ((await contacts.Query(Dto.Factory.CreateHead(Entity.Id))).Count > 0)
 			throw new InvalidOperationException($"{Strings.ErrEntityProtection} ({nameof(IPersonContact)}");
 	}
