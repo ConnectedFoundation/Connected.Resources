@@ -7,6 +7,9 @@ internal sealed class EmployeeProtector(IEmployeeCache cache)
 {
 	protected override async Task OnInvoke()
 	{
+		if (State != Entities.State.Delete)
+			return;
+
 		if (await cache.AsEntity(f => f.Parent == Entity.Id) != null)
 			throw new InvalidOperationException($"{Strings.ErrEntityProtection} ({nameof(IEmployee)})");
 	}

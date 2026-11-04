@@ -8,6 +8,9 @@ internal sealed class EmploymentTypeProtector(IEmployeeCache cache)
 {
 	protected override async Task OnInvoke()
 	{
+		if (State != Entities.State.Delete)
+			return;
+
 		if (await cache.AsEntity(f => f.EmploymentType == Entity.Id) != null)
 			throw new InvalidOperationException($"{Strings.ErrEntityProtection} ({nameof(IEmployee)})");
 	}

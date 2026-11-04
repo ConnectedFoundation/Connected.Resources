@@ -9,6 +9,9 @@ internal sealed class JobPositionProtector(IEmployeeCache cache)
 {
 	protected override async Task OnInvoke()
 	{
+		if (State != Entities.State.Delete)
+			return;
+
 		if (await cache.AsEntity(f => f.JobPosition == Entity.Id) is not null)
 			throw new InvalidOperationException($"{Strings.ErrEntityProtection} ({nameof(IEmployee)})");
 	}
