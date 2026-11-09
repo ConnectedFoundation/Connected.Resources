@@ -20,7 +20,7 @@ public interface IPersonContactService
 	[ServiceOperation(ServiceOperationVerbs.Get)]
 	Task<IImmutableList<IPersonContact>> Query(IHeadDto<int> dto);
 
-	[ServiceOperation(ServiceOperationVerbs.Get), ServiceUrl(ServiceOperations.Lookup)]
+	[ServiceOperation(ServiceOperationVerbs.Get | ServiceOperationVerbs.Post), ServiceUrl(ServiceOperations.Lookup)]
 	Task<IImmutableList<IPersonContact>> Query(IHeadListDto<int> dto);
 
 	[ServiceOperation(ServiceOperationVerbs.Get)]
